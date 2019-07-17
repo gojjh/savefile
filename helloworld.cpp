@@ -7,7 +7,10 @@ CONTRACT helloworld: public contract {
         using contract::contract; 
 
         ACTION hi(name user){
-            check(has_auth(user), "missing authority");
+            bool isTrue = has_auth(get_self()) || has_auth("wjdwlsgks123"_n);
+           
+            check(isTrue, "miss");            
+
             // == require_auth(user)
             //require_auth(user);
 
